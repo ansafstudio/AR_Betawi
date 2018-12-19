@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/PROJECT/AR_Betawi/PRJ/Package/JakartaTourismCal_v001.apk
+D:/PROJECT/AR_Betawi/PRJ/Package/JakartaTourismCal_v002.apk
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
@@ -191,7 +191,7 @@ c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBe
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 56206faeb0864ca080da1f68f7a14d24 Assembly-CSharp.dll:.GameMgr
-b4a1f7b45302d1ff2675a2d62bd5f40a Assembly-CSharp.dll:.MenuMgr
+88add8a35850501eeaca4fce929961f7 Assembly-CSharp.dll:.MenuMgr
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -208,7 +208,7 @@ da21fc3f8056b1f91c3dd09c7bf4f90a UnityEngine.Networking.dll:UnityEngine.Networki
 fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
-331e38e5bd3d07eeaa8fc9e46927f207 Assembly-CSharp.dll:.DefaultTrackableEventHandler
+d54de00e9a7433da05978263cb1a56ff Assembly-CSharp.dll:.DefaultTrackableEventHandler
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 392c5b921098bd4c139d9146d0efa6d7 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback

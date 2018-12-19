@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MenuMgr : MonoBehaviour {
     public GameObject mainMenu;
+    public GameObject petunjukMenu;
+    public AudioSource backsound;
 
 
 	// Use this for initialization
@@ -19,11 +21,30 @@ public class MenuMgr : MonoBehaviour {
     public void StartAR()
     {
         mainMenu.SetActive(false);
+        petunjukMenu.SetActive(false);
+        backsound.Pause();
     }
 
+    public void BackToMainMenuFromAR()
+    {
+        mainMenu.SetActive(true);
+        petunjukMenu.SetActive(false);
+        backsound.Play();
+    }
     public void BackToMainMenu()
     {
         mainMenu.SetActive(true);
+        petunjukMenu.SetActive(false);
+        //backsound.Play();
+    }
+    public void OpenPetunjuk()
+    {
+        petunjukMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
 }

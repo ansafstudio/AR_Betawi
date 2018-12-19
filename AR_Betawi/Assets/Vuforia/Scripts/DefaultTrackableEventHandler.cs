@@ -23,10 +23,16 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     #endregion // PROTECTED_MEMBER_VARIABLES
 
-    public GameObject canvasGame;
+    public GameObject[] models3D;
 
-    public GameObject desc;
-    public GameObject buttonSound;
+    public GameObject canvasGame;
+    
+    public GameObject[] desc;
+    public AudioSource[] voiceOver;
+    public GameObject[] otherButton;
+
+    bool rotRight = false;
+    bool rotLeft = false;
 
     #region UNITY_MONOBEHAVIOUR_METHODS
 
@@ -62,6 +68,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
             OnTrackingFound();
             canvasGame.SetActive(true);
+            models3D[0].SetActive(true);
+            models3D[1].SetActive(true);
         }
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NO_POSE)
@@ -69,6 +77,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
             OnTrackingLost();
             canvasGame.SetActive(false);
+            models3D[0].SetActive(false);
+            models3D[1].SetActive(false);
         }
         else
         {
@@ -77,18 +87,66 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             // Call OnTrackingLost() to hide the augmentations
             OnTrackingLost();
             canvasGame.SetActive(false);
+            models3D[0].SetActive(false);
+            models3D[1].SetActive(false);
         }
     }
 
-    public void OpenDesc()
+    public void OpenDesc(int index)
     {
-        desc.SetActive(true);
-        buttonSound.SetActive(false);
+        desc[index].SetActive(true);
+        for (int i = 0; i < otherButton.Length; i++)
+        {
+            otherButton[i].SetActive(false);
+        }
+        //buttonSound.SetActive(false);
+        voiceOver[index].Play();
+
     }
-    public void ExitDesc()
+    public void ExitDesc(int index)
     {
-        desc.SetActive(false);
-        buttonSound.SetActive(true);
+        desc[index].SetActive(false);
+        for (int i = 0; i < otherButton.Length; i++)
+        {
+            otherButton[i].SetActive(true);
+        }
+        //buttonSound.SetActive(true);
+        voiceOver[index].Stop();
+    }
+
+    void Update()
+    {
+        if (rotRight)
+        {
+            for (int i = 0; i < models3D.Length; i++)
+            {
+                models3D[i].transform.Rotate(Vector3.up, 50f * Time.deltaTime);
+            }
+        } else if (rotLeft)
+        {
+            for (int i = 0; i < models3D.Length; i++)
+            {
+                models3D[i].transform.Rotate(Vector3.down, 50f * Time.deltaTime);
+            }
+        }
+    }
+
+    public void RotateRightPressed()
+    {
+        rotRight = true;
+    }
+    public void RotateRightReleased()
+    {
+        rotRight = false;
+    }
+
+    public void RotateLeftPressed()
+    {
+        rotLeft = true;
+    }
+    public void RotateLeftReleased()
+    {
+        rotLeft = false;
     }
 
     #endregion // PUBLIC_METHODS
